@@ -7,7 +7,6 @@ package ejercicios;
  * Cuanto suman los números escritos
  * Cuantos de estos números son pares.
  */
-
 public class Ejercicio3 {
 	
 	public static void main(String[] args) {
