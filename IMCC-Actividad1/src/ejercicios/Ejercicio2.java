@@ -1,17 +1,14 @@
 package ejercicios;
 
 /**
-
  * Diseñar un programa que muestre el producto y la suma de los 10 primeros 
  * números impares.
  */
-
 public class Ejercicio2 {
 
 	public static void main(String[] args) {
 		
 		/*
-	
 		 * Inicializamos todas las variables. Especial atención a numeroActual
 		 * que empezará en 1 para no provocar un producto nulo. Lo mismo para 
 		 * productoImpares que también inicializará a 1 para no provocar producto

@@ -2,27 +2,29 @@ package ejercicios;
 
 import java.util.Scanner;
 
+/**
+ * Pedir una nota de 0 a 10 y mostrarla de la forma: Insuficiente, 
+ * Suficiente, Bien, Notable y sobresaliente. Si la nota introducida 
+ * no está en el rango mostrar el mensaje “Nota errónea”.
+ */
 public class Ejercicio1Pulido {
 	
-	/**
-	 * Pedir una nota de 0 a 10 y mostrarla de la forma: Insuficiente, 
-	 * Suficiente, Bien, Notable y sobresaliente. Si la nota introducida 
-	 * no está en el rango mostrar el mensaje “Nota errónea”.
-	 */
-	
+	// Punto de entrada
 	public static void main(String[] args) {
 		
 		// Inicializa una instancia de Scanner para la entrada de teclado
 		Scanner entradaTeclado = new Scanner(System.in);
 		
-		// Llamamos al método pideUnaNota enviándole como argumento
-		// nuestra entradaTeclado (Scanner)
+		// Llamamos a pideUnaNota enviándole como argumento nuestra entradaTeclado (Scanner)
 		pideUnaNota(entradaTeclado);
 		
 	}
 	
-	// Este método de ayuda nos permitirá controlar si el valor de entrada
-	// es válido o no y funcionará de manera recursiva.
+	/* 
+	 * Este método de ayuda nos permitirá controlar si el valor de entrada
+	 * es válido o no gracias a una estructura try-catch. Funcionará de 
+	 * manera recursiva hasta que obtengamos un valor válido.
+	 */
 	private static void pideUnaNota(Scanner entradaTeclado) {
 		try {
 			
@@ -32,8 +34,7 @@ public class Ejercicio1Pulido {
 			// Leemos el valor provisto como entero
 			int nota = entradaTeclado.nextInt();
 			
-			// En caso de que todo haya salido bien, enviamos el valor 
-			// a otro método de ayuda que procesará la lógica pedida.
+			// Llamamos al método que ejecuta la lógica pedida
 			procesarNota(nota);
 			
 			// Y finalizamos la instancia de Scanner
@@ -55,9 +56,14 @@ public class Ejercicio1Pulido {
 		}
 	}
 	
+	/*
+	 * Este método funciona como un wrapper que procesa la lógica pedida
+	 * en el ejercicio. Además en caso de proporcionarse un valor fuera
+	 * de rango, llama al método pideUnaNota con un nuevo objeto Scanner
+	 * para que se proporcione un valor en rango.
+	 */
 	private static void procesarNota(int nota) {
-		
-		// Procesamos la nota con una estructura switch
+
 		switch (nota) {
 			case 0:
 				System.out.println("Insuficiente");
@@ -105,7 +111,9 @@ public class Ejercicio1Pulido {
 				break;
 			default:
 				System.out.println("Número incorrecto.");
+				// Crea una nueva instancia de Scanner
 				Scanner nuevaEntradaTeclado = new Scanner(System.in);
+				// La enviamos al método pideUnaNota y reiniciamos el programa
 				pideUnaNota(nuevaEntradaTeclado);
 				break;
 		}
