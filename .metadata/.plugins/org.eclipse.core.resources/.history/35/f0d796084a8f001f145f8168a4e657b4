@@ -1,0 +1,60 @@
+package ejercicios;
+
+import java.util.Scanner;
+
+public class Ejercicio1 {
+	
+	public static void main(String[] args) {
+		
+		// Inicializa una instancia de Scanner para la entrada de teclado
+		Scanner entradaTeclado = new Scanner(System.in);
+		
+		// Pedir nota por consola
+		System.out.println("Introduce una nota entre 0 y 10: ");
+		
+		// Almacena la nota introducida como entero
+		int nota = entradaTeclado.nextInt();
+		
+		// Procesa la nota en un bucle while y devuelve la salida
+		switch (nota) {
+			case 0:
+				System.out.println("Insuficiente");
+				break;
+			case 1:
+				System.out.println("Insuficiente");
+				break;
+			case 2:
+				System.out.println("Insuficiente");
+				break;
+			case 3:
+				System.out.println("Insuficiente");
+				break;
+			case 4:
+				System.out.println("Insuficiente");
+				break;
+			case 5:
+				System.out.println("Suficiente");
+				break;
+			case 6:
+				System.out.println("Bien");
+				break;
+			case 7:
+				System.out.println("Notable");
+				break;
+			case 8:
+				System.out.println("Notable");
+				break;
+			case 9:
+				System.out.println("Sobresaliente");
+				break;
+			case 10:
+				System.out.println("Sobresaliente");
+				break;
+			default:
+				System.out.println("Número incorrecto.");
+				break;
+		}
+		
+	}
+
+}
